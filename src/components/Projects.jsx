@@ -46,10 +46,9 @@ export default function Projects() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-extralight text-slate-900 mb-6">
+          <h2 className="text-5xl md:text-6xl font-extrabold font-inter text-black mb-6">
             Featured Projects
           </h2>
-          <div className="w-24 h-px bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8" />
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
             A showcase of my recent work spanning web applications, mobile apps, and design systems.
           </p>
@@ -64,7 +63,7 @@ export default function Projects() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="group h-full border-none shadow-lg hover:shadow-2xl transition-all duration-500 bg-white/80 backdrop-blur-sm overflow-hidden">
+              <Card className="group h-full border-none hover:shadow-2xl transition-all duration-500 bg-blue-200 backdrop-blur-sm overflow-hidden">
                 <div className="relative overflow-hidden">
                   <img 
                     src={project.image} 
@@ -84,28 +83,28 @@ export default function Projects() {
                 
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
+                    <span className="text-sm font-medium text-blue-600 bg-blue-100 px-3 py-1 rounded-full">
                       {project.category}
                     </span>
                   </div>
                   
-                  <h3 className="text-2xl font-semibold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                  <h3 className="text-2xl font-semibold text-blue-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
                     {project.title}
                   </h3>
                   
-                  <p className="text-slate-600 mb-4 leading-relaxed">
+                  <p className="text-blue-800 mb-4 leading-relaxed">
                     {project.description}
                   </p>
                   
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((tech) => (
-                      <span key={tech} className="text-xs font-medium text-slate-500 bg-slate-100 px-2 py-1 rounded">
+                      <span key={tech} className="text-xs font-medium text-blue-700 bg-blue-100 px-2 py-1 rounded">
                         {tech}
                       </span>
                     ))}
                   </div>
                   
-                  <Button variant="ghost" className="w-full justify-between group-hover:bg-blue-50 group-hover:text-blue-600 transition-all duration-300">
+                  <Button variant="ghost" className="w-full justify-between group-hover:bg-blue-100 group-hover:text-blue-700 transition-all duration-300">
                     View Project
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </Button>

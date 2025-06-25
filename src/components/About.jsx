@@ -64,7 +64,7 @@ export default function About() {
                 transition={{ duration: 0.6, delay: 0.1 * index }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full border-none shadow-lg hover:shadow-xl transition-all duration-300 bg-blue-50/70 backdrop-blur-sm">
+                <Card className="h-full bg-white transition-all duration-300">
                   <CardContent className="p-6 text-center">
                     <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-blue-300 rounded-full flex items-center justify-center">
                       <skill.icon className="w-6 h-6 text-white" />
