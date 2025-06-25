@@ -12,19 +12,18 @@ export default function About() {
   ];
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-6 py-20">
+    <div className="min-h-screen flex items-center justify-center px-6 py-20 bg-blue-100">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-left mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-extralight text-slate-900 mb-6">
+          <h2 className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight font-inter">
             About Me
           </h2>
-          <div className="w-24 h-px bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8" />
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -34,16 +33,16 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-3xl font-light text-slate-900 mb-6">
+            <h3 className="text-3xl font-semibold text-blue-900 mb-6 font-inter">
               Crafting Digital Excellence
             </h3>
-            <p className="text-lg text-slate-600 leading-relaxed mb-6">
+            <p className="text-lg font-semibold text-blue-800 leading-relaxed mb-6 font-inter">
               I'm a passionate developer and designer who believes that great digital experiences 
               come from the perfect blend of beautiful design and solid code. With years of 
               experience in the field, I specialize in creating websites and applications that 
               not only look stunning but also perform flawlessly.
             </p>
-            <p className="text-lg text-slate-600 leading-relaxed">
+            <p className="text-lg text-blue-800 leading-relaxed font-inter">
               When I'm not coding, you'll find me exploring new design trends, experimenting 
               with emerging technologies, or enjoying a good cup of coffee while sketching 
               new ideas.
@@ -65,13 +64,13 @@ export default function About() {
                 transition={{ duration: 0.6, delay: 0.1 * index }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full border-none shadow-lg hover:shadow-xl transition-all duration-300 bg-white/70 backdrop-blur-sm">
+                <Card className="h-full border-none shadow-lg hover:shadow-xl transition-all duration-300 bg-blue-50/70 backdrop-blur-sm">
                   <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                    <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-blue-300 rounded-full flex items-center justify-center">
                       <skill.icon className="w-6 h-6 text-white" />
                     </div>
-                    <h4 className="font-semibold text-slate-900 mb-2">{skill.title}</h4>
-                    <p className="text-sm text-slate-600">{skill.desc}</p>
+                    <h4 className="font-semibold text-blue-900 mb-2 font-inter">{skill.title}</h4>
+                    <p className="text-sm text-blue-800 font-inter">{skill.desc}</p>
                   </CardContent>
                 </Card>
               </motion.div>

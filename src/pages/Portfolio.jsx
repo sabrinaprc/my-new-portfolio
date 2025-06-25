@@ -54,7 +54,7 @@ useEffect(() => {
             animate={{
               opacity: [0, 1, 1],
               scaleX: [1, 1, 1.2],
-              scaleY: [1, 1, 1],
+              scaleY: [1, 1, 1.2],
               y: [0, 0, 0],
             }}
             transition={{
@@ -64,8 +64,8 @@ useEffect(() => {
             }}
             className="fixed inset-0 z-50 flex items-center justify-center bg-white"
           >
-            <div className="w-full max-w-5xl overflow-hidden">
-              <span className="block text-9xl font-inter font-extrabold text-black tracking-tight text-center w-full mt-3">
+            <div className="w-full max-w-5xl">
+              <span className="block text-9xl font-inter font-extrabold text-black tracking-tight text-center w-full mt-[-52px]">
                 SABRINA PARK
               </span>
             </div>
