@@ -12,15 +12,28 @@ import Contact from '../components/Contact';
 import Navigation from '../components/Navigation';
 
 export default function Portfolio() {
-  const [showNamePopup, setShowNamePopup] = useState(true);
-  const [currentSection, setCurrentSection] = useState('hero');
+const [showNamePopup, setShowNamePopup] = useState(true);
+const [startBounce, setStartBounce] = useState(false);
+const [currentSection, setCurrentSection] = useState('hero');
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowNamePopup(false);
-    }, 1500);
-    return () => clearTimeout(timer);
-  }, []);
+useEffect(() => {
+  const widenDuration = 600;
+  const bounceDuration = 1000;
+  const totalDuration = widenDuration + bounceDuration + 400; // optional pause
+
+  const bounceTimer = setTimeout(() => {
+    setStartBounce(true);
+  }, bounceDuration);
+
+  const exitTimer = setTimeout(() => {
+    setShowNamePopup(false);
+  }, totalDuration);
+
+  return () => {
+    clearTimeout(bounceTimer);
+    clearTimeout(exitTimer);
+  };
+}, []);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -33,79 +46,88 @@ export default function Portfolio() {
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
       {/* Name Popup */}
-        <AnimatePresence>
+      <AnimatePresence>
         {showNamePopup && (
-            <motion.div
+          <motion.div
             key="popup"
-            initial={{ y: 0 }}
-            animate={{ y: 0 }}
-            exit={{ y: "-100%" }}
-            transition={{ duration: 1, ease: "easeInOut", delay: 0.3 }}
+            initial={{ opacity: 0, scaleX: 1, scaleY: 1, y: 0 }}
+            animate={{
+              opacity: [0, 1, 1],
+              scaleX: [1, 1, 1.2],
+              scaleY: [1, 1, 1],
+              y: [0, 0, 0],
+            }}
+            transition={{
+              opacity: { duration: 0.7, times: [0, 0.3, 1] },
+              scaleX: { duration: 1.5, times: [0, 0.5, 1], ease: "easeOut" },
+              scaleY: { duration: 1.5, times: [0, 0.5, 1], ease: "easeOut" },
+            }}
             className="fixed inset-0 z-50 flex items-center justify-center bg-white"
-            >
-            <motion.div
-              initial={{ scaleX: 0.5, scaleY: 0.5, opacity: 0 }}
-              animate={{ scaleX: .8, scaleY: .8, opacity: 1 }}
-              exit={{
-                scaleX: 1.3,
-                scaleY: 1.2,
-                opacity: 1,
-                y: [0, 0, "-100%"], // Pause, then move up
-              }}
-              transition={{
-                scaleX: { duration: 0.6, ease: "easeOut" },
-                scaleY: { duration: 0.6, ease: "easeOut" },
-                opacity: { delay: 0.2, duration: 0.4 },
-                y: { delay: 0.4, duration: 0.6, times: [0, 0.5, 1] }, // Pause, then slide up
-              }}
-              className="text-center origin-center"
-            >
-                <h1 className="text-8xl md:text-[10rem] font-inter font-bold text-black tracking-tight">
-                  Sabrina Park
-                </h1>
-            </motion.div>
-            </motion.div>
+          >
+            <div className="w-full max-w-5xl overflow-hidden">
+              <span className="block text-9xl font-inter font-extrabold text-black tracking-tight text-center w-full mt-3">
+                SABRINA PARK
+              </span>
+            </div>
+          </motion.div>
         )}
-        </AnimatePresence>
+      </AnimatePresence>
 
 
       {/* Main Content */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: showNamePopup ? 0 : 1 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        className="relative"
-      >
-        <Navigation currentSection={currentSection} onSectionChange={scrollToSection} />
-        
+      {!showNamePopup && (
         <div className="relative">
-          <section id="hero" className="min-h-screen">
-            <Hero onScrollToNext={() => scrollToSection('about')} />
-          </section>
-          
-          <section id="about" className="min-h-screen">
-            <About />
-          </section>
-          
-          <section id="projects" className="min-h-screen">
-            <Projects />
-          </section>
-          
-          <section id="experience" className="min-h-screen">
-            <Experience />
-          </section>
-          
-          <section id="contact" className="min-h-screen">
-            <Contact />
-          </section>
+          <Navigation currentSection={currentSection} onSectionChange={scrollToSection} />
+          <div className="relative">
+            <section id="hero" className="min-h-screen">
+              <Hero onScrollToNext={() => scrollToSection('about')} />
+            </section>
+            
+            <section id="about" className="min-h-screen">
+              <About />
+            </section>
+            
+            <section id="projects" className="min-h-screen">
+              <Projects />
+            </section>
+            
+            <section id="experience" className="min-h-screen">
+              <Experience />
+            </section>
+            
+            <section id="contact" className="min-h-screen">
+              <Contact />
+            </section>
+          </div>
         </div>
-      </motion.div>
+      )}
       <div className="bg-white font-inter font-bold text-8xl tracking-tight p-8 rounded-xl shadow-lg">
         Creative
         <br />
         <span className="text-black font-bold font-inter">
           Developer
         </span>
+      </div>
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 bg-blue-400 rounded-full opacity-20"
+            animate={{
+              x: [0, 100, 0],
+              y: [0, -100, 0],
+            }}
+            transition={{
+              duration: 10 + i * 2,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+            style={{
+              left: `${20 + i * 15}%`,
+              top: `${30 + i * 10}%`,
+            }}
+          />
+        ))}
       </div>
     </div>
   );
