@@ -50,25 +50,22 @@ useEffect(() => {
         {showNamePopup && (
           <motion.div
             key="popup"
-            initial={{ opacity: 0, scaleX: 1, scaleY: 1, y: 0 }}
+            initial={{ opacity: 0, scaleX: 1, scaleY: 1 }}
             animate={{
               opacity: [0, 1, 1],
               scaleX: [1, 1, 1.2],
               scaleY: [1, 1, 1.2],
-              y: [0, 0, 0],
             }}
             transition={{
               opacity: { duration: 0.7, times: [0, 0.3, 1] },
               scaleX: { duration: 1.5, times: [0, 0.5, 1], ease: "easeOut" },
               scaleY: { duration: 1.5, times: [0, 0.5, 1], ease: "easeOut" },
             }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-white"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-white origin-center"
           >
-            <div className="w-full max-w-5xl">
-              <span className="block text-9xl font-inter font-extrabold text-black tracking-tight text-center w-full mt-[-52px]">
-                SABRINA PARK
-              </span>
-            </div>
+            <h1 className="w-full text-[clamp(3rem,12vw,20rem)] font-extrabold font-inter tracking-tight text-black text-center">
+              SABRINA PARK
+            </h1>
           </motion.div>
         )}
       </AnimatePresence>
@@ -77,10 +74,14 @@ useEffect(() => {
       {/* Main Content */}
       {!showNamePopup && (
         <div className="relative">
-          <Navigation currentSection={currentSection} onSectionChange={scrollToSection} />
+          {/* <Navigation currentSection={currentSection} onSectionChange={scrollToSection} /> */}
           <div className="relative">
             <section id="hero" className="min-h-screen">
-              <Hero onScrollToNext={() => scrollToSection('about')} />
+              <Hero
+                onScrollToNext={() => scrollToSection('about')}
+                currentSection={currentSection}
+                onSectionChange={scrollToSection}
+              />
             </section>
             
             <section id="about" className="min-h-screen">
@@ -101,7 +102,7 @@ useEffect(() => {
           </div>
         </div>
       )}
-      <div className="bg-white font-inter font-bold text-8xl tracking-tight p-8 rounded-xl shadow-lg">
+      <div className="bg-white font-inter font-bold text-5xl tracking-tight p-8 rounded-xl shadow-lg">
         Developer
         <br />
         <span className="text-black font-bold font-inter">
