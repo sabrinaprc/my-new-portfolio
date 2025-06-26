@@ -33,12 +33,10 @@ export default function Experience() {
     <div className="min-h-screen flex items-center justify-center px-6 py-20 bg-white">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-extrabold text-blue-900 mb-6 font-inter">
+          <h2 className="text-5xl md:text-6xl font-extrabold mb-6 font-inter">
             Experience
           </h2>
-          {/* Removed purple, use blue accent */}
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-blue-200 mx-auto mb-8 rounded-full" />
-          <p className="text-xl text-blue-800 max-w-2xl mx-auto font-inter">
+          <p className="text-xl text-blue-800 max-w-2xl mx-auto font-inter font-semibold">
             My professional journey building digital experiences across various industries.
           </p>
         </div>

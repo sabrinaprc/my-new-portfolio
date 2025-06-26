@@ -95,17 +95,17 @@ useEffect(() => {
               <Experience />
             </section>
             
-            <section id="contact" className="min-h-screen">
+            <section id="contact">
               <Contact />
             </section>
           </div>
         </div>
       )}
       <div className="bg-white font-inter font-bold text-8xl tracking-tight p-8 rounded-xl shadow-lg">
-        Creative
+        Developer
         <br />
         <span className="text-black font-bold font-inter">
-          Developer
+          in progess. 
         </span>
       </div>
     </div>
