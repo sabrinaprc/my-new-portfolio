@@ -30,7 +30,7 @@ export default function Navigation({ currentSection, onSectionChange }) {
         transition={{ delay: 0.2, duration: 0.6 }}
         className="w-full bg-transparent"
       >
-        <div className="flex items-center justify-between px-1 w-full max-w-screen-xl mx-auto py-2">
+        <div className="w-full max-w-none mx-auto flex items-center justify-between px-1 py-2">
           {navItems.map((item) => (
             <Button
               key={item.id}
