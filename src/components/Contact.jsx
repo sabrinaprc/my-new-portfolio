@@ -3,12 +3,11 @@ import { motion } from 'framer-motion';
 import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
 
 export default function Contact() {
-  const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Mail, href: "mailto:your.email@example.com", label: "Email" }
-  ];
+const socialLinks = [
+  { icon: Github, href: "https://github.com/sabrinaprc", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/sabrina-park12", label: "LinkedIn" },
+  { icon: Mail, href: "mailto:sabrinapark710@gmail.com", label: "Email" }
+];
 
   return (
     <motion.div
@@ -20,7 +19,7 @@ export default function Contact() {
 >
   <div className="w-full mx-4 rounded-3xl bg-slate-900 py-8 px-2 flex flex-col items-center">
     <h2 className="text-5xl md:text-6xl font-extrabold font-inter text-white mb-10">
-      Let's Connect
+      Let's Connect!
     </h2>
     <div className="flex gap-8 flex-wrap justify-center">
       {socialLinks.map((social) => (
