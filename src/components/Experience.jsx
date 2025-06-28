@@ -28,7 +28,7 @@ export default function Experience() {
       title: "Learning Assistant – Lower Division Python Programming",
       company: "University of California, Irvine",
       location: "Irvine, CA",
-      period: "2023 – 2024",
+      period: "2023 – 2025",
       description: "Supported instruction for Python programming course. Guided students through debugging, coding assignments, and programming concepts in labs and office hours.",
       achievements: [
         "Mentored 100+ students across multiple quarters",
