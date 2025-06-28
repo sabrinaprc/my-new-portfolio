@@ -5,10 +5,10 @@ import { Card, CardContent } from '../components/ui/card';
 
 export default function About() {
   const skills = [
-    { icon: Code, title: "Development", desc: "Full-stack development with modern technologies" },
+    { icon: Code, title: "Development", desc: "Full-stack developer" },
     { icon: Palette, title: "Design", desc: "UI/UX design with attention to detail" },
     { icon: Zap, title: "Performance", desc: "Optimized, fast, and scalable solutions" },
-    { icon: Heart, title: "Passion", desc: "Love for creating meaningful experiences" }
+    { icon: Heart, title: "Passion", desc: "Love for creating meaningful tech" }
   ];
 
   return (

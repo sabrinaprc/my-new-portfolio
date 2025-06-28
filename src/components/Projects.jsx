@@ -6,35 +6,36 @@ import { Button } from './ui/button';
 
 export default function Projects() {
   const projects = [
-    {
-      title: "E-Commerce Platform",
-      description: "A modern, scalable e-commerce solution with seamless user experience and powerful admin features.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-      tech: ["React", "Node.js", "MongoDB", "Stripe"],
-      category: "Web Application"
-    },
-    {
-      title: "Design System",
-      description: "Comprehensive design system and component library for consistent brand experience across platforms.",
-      image: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=600&h=400&fit=crop",
-      tech: ["Figma", "React", "Storybook", "TypeScript"],
-      category: "Design & Development"
-    },
-    {
-      title: "Mobile Banking App",
-      description: "Secure and intuitive mobile banking application with advanced financial management features.",
-      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop",
-      tech: ["React Native", "Firebase", "Redux", "Biometrics"],
-      category: "Mobile Application"
-    },
-    {
-      title: "AI Dashboard",
-      description: "Intelligent analytics dashboard with machine learning insights and real-time data visualization.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-      tech: ["Python", "TensorFlow", "D3.js", "AWS"],
-      category: "Data & AI"
-    }
-  ];
+  {
+    title: "Weatherfy",
+    description: "A full-stack web app that generates Spotify playlists based on the current weather. Integrated OpenWeatherMap and Spotify APIs with a FastAPI backend and React frontend.",
+    image: "./images/weatherfy.png",
+    tech: ["React", "FastAPI", "PostgreSQL", "Spotify API", "OpenWeather API"],
+    category: "Web Application"
+  },
+  {
+    title: "Freshventory",
+    description: "A fridge inventory tracker that uses computer vision to identify items and suggest recipes. Combines image recognition with a clean UI for practical kitchen use.",
+    image: "./images/Freshventory.jpg",
+    tech: ["Python", "OpenCV", "Streamlit", "MongoDB"],
+    category: "AI + Full Stack"
+  },
+  {
+    title: "Search Engine",
+    description: "A custom-built search engine using TF-IDF for ranking and MongoDB for document storage. Built without external libraries like Lucene to demonstrate core IR concepts.",
+    image: "./images/search-engine.png",
+    tech: ["Python", "MongoDB", "TF-IDF", "Flask"],
+    category: "Information Retrieval"
+  },
+  {
+    title: "ChompBot",
+    description: "An AI model that classifies food types from images and analyzes nutritional content using TensorFlow. Includes real-time predictions and deployment via AWS.",
+    image: "./images/chompbot.jpg",
+    tech: ["TensorFlow", "Python", "AWS", "Pandas"],
+    category: "Machine Learning"
+  }
+];
+
 
   return (
     <div className="min-h-screen flex items-center justify-center px-6 py-20">
