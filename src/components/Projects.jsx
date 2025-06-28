@@ -1,41 +1,44 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Card, CardContent } from '../components/ui/card';
 import { Button } from './ui/button';
 
 export default function Projects() {
   const projects = [
-  {
-    title: "Weatherfy",
-    description: "A full-stack web app that generates Spotify playlists based on the current weather. Integrated OpenWeatherMap and Spotify APIs with a FastAPI backend and React frontend.",
-    image: "./images/weatherfy.png",
-    tech: ["React", "FastAPI", "PostgreSQL", "Spotify API", "OpenWeather API"],
-    category: "Web Application"
-  },
-  {
-    title: "Freshventory",
-    description: "A fridge inventory tracker that uses computer vision to identify items and suggest recipes. Combines image recognition with a clean UI for practical kitchen use.",
-    image: "./images/Freshventory.jpg",
-    tech: ["Python", "OpenCV", "Streamlit", "MongoDB"],
-    category: "AI + Full Stack"
-  },
-  {
-    title: "Search Engine",
-    description: "A custom-built search engine using TF-IDF for ranking and MongoDB for document storage. Built without external libraries like Lucene to demonstrate core IR concepts.",
-    image: "./images/search-engine.png",
-    tech: ["Python", "MongoDB", "TF-IDF", "Flask"],
-    category: "Information Retrieval"
-  },
-  {
-    title: "ChompBot",
-    description: "An AI model that classifies food types from images and analyzes nutritional content using TensorFlow. Includes real-time predictions and deployment via AWS.",
-    image: "./images/chompbot.jpg",
-    tech: ["TensorFlow", "Python", "AWS", "Pandas"],
-    category: "Machine Learning"
-  }
-];
-
+    {
+      title: "Weatherfy (Currently in development)",
+      description: "A full-stack web app that recommends Spotify playlists based on real-time weather data. Built with React, FastAPI, and PostgreSQL, Weatherfy uses the Spotify and OpenWeatherMap APIs to generate mood-based playlists. Deployed using AWS EC2 and Docker (public access coming soon).",
+      image: "./images/weatherfy.png",
+      tech: ["React", "FastAPI", "PostgreSQL", "Spotify API", "OpenWeather API", "AWS and Docker coming soon"],
+      category: "Web Application",
+      link: "https://github.com/sabrinaprc/Weatherfy"
+    },
+    {
+      title: "Freshventory",
+      description: "A smart fridge inventory app that uses AI-powered image recognition to detect ingredients from a fridge photo and suggest recipes. Built with React Native, Firebase, and Roboflow, it helps users reduce food waste and simplify meal planning—perfect for busy students and households.",
+      image: "./images/Freshventory.jpg",
+      tech: ["React Native", "Firebase", "Roboflow", "Spoonacular API"],
+      category: "AI + Full Stack",
+      link: "https://devpost.com/software/freshventory"
+    },
+    {
+      title: "Search Engine",
+      description: "A custom-built search engine using TF-IDF for ranking and MongoDB for document storage. Built without external libraries like Lucene to demonstrate core IR concepts.",
+      image: "./images/search-engine.png",
+      tech: ["Python", "MongoDB", "TF-IDF", "Flask"],
+      category: "Information Retrieval",
+      link: "https://github.com/sabrinaprc/Search-Engine-Updated"
+    },
+    {
+      title: "ChompBot",
+      description: "An AI-powered restaurant assistant that helps users find food spots using natural language. Built with ChatterBot and Yelp API, it interprets your preferences—like cuisine, location, and vibe—and responds with curated options and menus. Designed as a friendly, chat-based tool to cut through the noise of endless low-rated listings.",
+      image: "./images/chompbot.jpg",
+      tech: ["Python", "Yelp API", "ChatterBot", "Tkinter"],
+      category: "Conversational AI",
+      link: "https://devpost.com/software/chompbot"
+    },
+  ];
 
   return (
     <div className="min-h-screen flex items-center justify-center px-6 py-20">
@@ -51,7 +54,7 @@ export default function Projects() {
             Featured Projects
           </h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            A showcase of my recent work spanning web applications, mobile apps, and design systems.
+            A showcase of my recent work spanning web applications, machine learning, and creative tools.
           </p>
         </motion.div>
 
@@ -72,14 +75,6 @@ export default function Projects() {
                     className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <Button size="sm" variant="secondary" className="bg-white/90 hover:bg-white">
-                      <Github className="w-4 h-4" />
-                    </Button>
-                    <Button size="sm" variant="secondary" className="bg-white/90 hover:bg-white">
-                      <ExternalLink className="w-4 h-4" />
-                    </Button>
-                  </div>
                 </div>
                 
                 <CardContent className="p-6">
@@ -104,11 +99,16 @@ export default function Projects() {
                       </span>
                     ))}
                   </div>
-                  
-                  <Button variant="ghost" className="w-full justify-between group-hover:bg-blue-100 group-hover:text-blue-700 transition-all duration-300">
-                    View Project
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                  </Button>
+
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="block">
+                    <Button
+                      variant="ghost"
+                      className="w-full flex items-center justify-center gap-2 bg-white/40 hover:bg-white/70 text-blue-800 hover:text-blue-900 transition-all duration-300 rounded-lg py-3 font-semibold"
+                    >
+                      View Project
+                      <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </Button>
+                  </a>
                 </CardContent>
               </Card>
             </motion.div>
