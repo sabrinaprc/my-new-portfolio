@@ -34,18 +34,15 @@ export default function About() {
             viewport={{ once: true }}
           >
             <h3 className="text-3xl font-semibold text-blue-900 mb-6 font-inter">
-              Crafting Digital Excellence
+              Hello there! I'm Sabrina
             </h3>
             <p className="text-lg font-semibold text-blue-800 leading-relaxed mb-6 font-inter">
-              I'm a passionate developer and designer who believes that great digital experiences 
-              come from the perfect blend of beautiful design and solid code. With years of 
-              experience in the field, I specialize in creating websites and applications that 
-              not only look stunning but also perform flawlessly.
+              I'm a Computer Science student at UC Irvine specializing in Intelligent Systems, currently conducting AI research with BiasLab at UCI. I enjoy working full stack, and I love the creative side of design. 
+              My main focus now is using AI to solve real-world problems, with a strong interest in data analysis and ethical innovation, but I am open to the diverse opportunities in tech.
             </p>
             <p className="text-lg text-blue-800 leading-relaxed font-inter">
-              When I'm not coding, you'll find me exploring new design trends, experimenting 
-              with emerging technologies, or enjoying a good cup of coffee while sketching 
-              new ideas.
+              When I'm not coding, I love to stay active whether that's playing soccer, hiking or skiing!
+              I also love to travel and try new restaurants! @sabrinasfoodtour on ig ;) 
             </p>
           </motion.div>
 
