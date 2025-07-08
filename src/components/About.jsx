@@ -34,7 +34,7 @@ export default function About() {
             viewport={{ once: true }}
           >
             <h3 className="text-3xl font-semibold text-blue-900 mb-6 font-inter">
-              Hello there! I'm Sabrina
+              Hello! I'm Sabrina
             </h3>
             <p className="text-lg font-semibold text-blue-800 leading-relaxed mb-6 font-inter">
               I'm a Computer Science student at UC Irvine specializing in Intelligent Systems, currently conducting AI research with BiasLab at UCI. I enjoy working full stack, and I love the creative side of design. 
@@ -42,7 +42,7 @@ export default function About() {
             </p>
             <p className="text-lg text-blue-800 leading-relaxed font-inter">
               When I'm not coding, I love to stay active whether that's playing soccer, hiking or skiing!
-              I also love to travel and try new restaurants! @sabrinasfoodtour on ig ;) 
+              I'm also bilingual in French and English and love to travel and try new restaurants! @sabrinasfoodtour on ig ;) 
             </p>
           </motion.div>
 
