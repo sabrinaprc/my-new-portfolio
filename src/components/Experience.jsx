@@ -9,7 +9,7 @@ export default function Experience() {
       location: "Irvine, CA",
       period: "Present",
       description: "Conducting AI/ML research with a focus on neuro-vector-symbolic architectures (NVSA), Vision Transformers, and visual reasoning/detection tasks. My role centers on testing and validating model pipelines, running experiments on large-scale datasets (e.g., RAVEN), and supporting the integration of symbolic reasoning with deep learning. More updates coming soon!",
-      achievements: [ "tba"
+      achievements: [ "Pytorch"
       ]
     },
     {
