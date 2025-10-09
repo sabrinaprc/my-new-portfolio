@@ -56,7 +56,7 @@ export default function Hero({ onScrollToNext, onSectionChange, currentSection }
               Explore My Work
             </Button>
             <a
-              href="/Sabrina Resume 2025.pdf"
+              href="/Sabrina Park - Resume copy.docx.pdf"
               download
               className="bg-blue-100 hover:bg-blue-300 text-blue-900 px-8 py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 text-center"
             >
