@@ -8,7 +8,7 @@ export default function Projects() {
   const projects = [
     {
       title: "Weatherfy (Currently in development)",
-      description: "A full-stack web app that recommends Spotify playlists based on real-time weather data. Built with React, FastAPI, and PostgreSQL, Weatherfy uses the Spotify and OpenWeatherMap APIs to generate mood-based playlists. Deployed using AWS EC2 and Docker (public access coming soon).",
+      description: "Unfortunately, Spotify API discontinued certain features that were vital for this application to work:( but here is the purpose: A full-stack web app that recommends Spotify playlists based on real-time weather data. Built with React, FastAPI, and PostgreSQL, Weatherfy uses the Spotify and OpenWeatherMap APIs to generate mood-based playlists. Deployed using AWS EC2 and Docker (public access coming soon).",
       image: "./images/weatherfy.png",
       tech: ["React", "FastAPI", "PostgreSQL", "Spotify API", "OpenWeather API", "AWS and Docker coming soon"],
       category: "Web Application",
